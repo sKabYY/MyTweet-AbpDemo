@@ -1,4 +1,5 @@
 ﻿using Abp.Modules;
+using MyTweet.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyTweet.Application
 {
+    [DependsOn(typeof(MyTweetDomainModule))]
     public class MyTweetApplicationModule : AbpModule
     {
         public override void Initialize()

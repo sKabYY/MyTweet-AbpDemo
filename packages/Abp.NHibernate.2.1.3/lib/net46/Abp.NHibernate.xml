@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abp.NHibernate</name>
+    </assembly>
+    <members>
+        <member name="T:Abp.Configuration.Startup.AbpNHibernateConfigurationExtensions">
+            <summary>
+            Defines extension methods to <see cref="T:Abp.Configuration.Startup.IModuleConfigurations"/> to allow to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="M:Abp.Configuration.Startup.AbpNHibernateConfigurationExtensions.AbpNHibernate(Abp.Configuration.Startup.IModuleConfigurations)">
+            <summary>
+            Used to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="T:Abp.NHibernate.AbpNHibernateModule">
+            <summary>
+            This module is used to implement "Data Access Layer" in NHibernate.
+            </summary>
+        </member>
+        <member name="F:Abp.NHibernate.AbpNHibernateModule._sessionFactory">
+            <summary>
+            NHibernate session factory object.
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.AbpNHibernateModule.Initialize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Abp.NHibernate.AbpNHibernateModule.Shutdown">
+            <inheritdoc/>
+        </member>
+        <member name="T:Abp.NHibernate.Configuration.IAbpNHibernateModuleConfiguration">
+            <summary>
+            Used to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="P:Abp.NHibernate.Configuration.IAbpNHibernateModuleConfiguration.FluentConfiguration">
+            <summary>
+            Used to get and modify NHibernate fluent configuration.
+            You can add mappings to this object.
+            Do not call BuildSessionFactory on it.
+            </summary>
+        </member>
+        <member name="T:Abp.NHibernate.EntityMappings.EntityMap`1">
+            <summary>
+            A shortcut of <see cref="T:Abp.NHibernate.EntityMappings.EntityMap`2"/> for most used primary key type (<see cref="T:System.Int32"/>).
+            </summary>
+            <typeparam name="TEntity">Entity map</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.EntityMap`1.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="tableName">Table name</param>
+        </member>
+        <member name="T:Abp.NHibernate.EntityMappings.EntityMap`2">
+            <summary>
+            This class is base class to map entities to database tables.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TPrimaryKey">Type of primary key of the entity</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.EntityMap`2.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="tableName">Table name</param>
+        </member>
+        <member name="T:Abp.NHibernate.EntityMappings.NhMappingExtensions">
+            <summary>
+            This class is used to make mapping easier for standart columns.
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapFullAudited``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps full audit columns (defined by <see cref="T:Abp.Domain.Entities.Auditing.IFullAudited"/>).
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapAudited``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps audit columns. See <see cref="T:Abp.Domain.Entities.Auditing.IAudited"/>.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapCreationAudited``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps creation audit columns. See <see cref="T:Abp.Domain.Entities.Auditing.ICreationAudited"/>.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapCreationTime``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps CreationTime column. See <see cref="T:Abp.Domain.Entities.Auditing.ICreationAudited"/>.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapLastModificationTime``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps LastModificationTime column. See <see cref="T:Abp.Domain.Entities.Auditing.IHasModificationTime"/>.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapModificationAudited``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps modification audit columns. See <see cref="T:Abp.Domain.Entities.Auditing.IModificationAudited"/>.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapDeletionAudited``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps deletion audit columns (defined by <see cref="T:Abp.Domain.Entities.Auditing.IDeletionAudited"/>).
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapIsDeleted``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps IsDeleted column (defined by <see cref="T:Abp.Domain.Entities.ISoftDelete"/>).
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.EntityMappings.NhMappingExtensions.MapIsActive``1(FluentNHibernate.Mapping.ClassMap{``0})">
+            <summary>
+            Maps MapIsActive column (defined by <see cref="T:Abp.Domain.Entities.IPassivable"/>).
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="T:Abp.NHibernate.Filters.MayHaveTenantFilter">
+            <summary>
+            Add filter MayHaveTenant 
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.Filters.MayHaveTenantFilter.#ctor">
+            <summary>
+            Contructor
+            </summary>
+        </member>
+        <member name="T:Abp.NHibernate.Filters.MustHaveTenantFilter">
+            <summary>
+            Add filter MustHaveTenant 
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.Filters.MustHaveTenantFilter.#ctor">
+            <summary>
+            Contructor
+            </summary>
+        </member>
+        <member name="T:Abp.NHibernate.Repositories.NhRepositoryBase`1">
+            <summary>
+            A shortcut of <see cref="T:Abp.NHibernate.Repositories.NhRepositoryBase`2"/> for most used primary key type (<see cref="T:System.Int32"/>).
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Abp.NHibernate.Repositories.NhRepositoryBase`1.#ctor(Abp.NHibernate.ISessionProvider)">
+            <summary>
+            Creates a new <see cref="T:Abp.NHibernate.Repositories.NhRepositoryBase`2"/> object.
+            </summary>
+            <param name="sessionProvider">A session provider to obtain session for database operations</param>
+        </member>
+        <member name="T:Abp.NHibernate.Repositories.NhRepositoryBase`2">
+            <summary>
+            Base class for all repositories those uses NHibernate.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
+        </member>
+        <member name="P:Abp.NHibernate.Repositories.NhRepositoryBase`2.Session">
+            <summary>
+            Gets the NHibernate session object to perform database operations.
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.Repositories.NhRepositoryBase`2.#ctor(Abp.NHibernate.ISessionProvider)">
+            <summary>
+            Creates a new <see cref="T:Abp.NHibernate.Repositories.NhRepositoryBase`2"/> object.
+            </summary>
+            <param name="sessionProvider">A session provider to obtain session for database operations</param>
+        </member>
+        <member name="T:Abp.NHibernate.Uow.NhUnitOfWork">
+            <summary>
+            Implements Unit of work for NHibernate.
+            </summary>
+        </member>
+        <member name="P:Abp.NHibernate.Uow.NhUnitOfWork.Session">
+            <summary>
+            Gets NHibernate session object to perform queries.
+            </summary>
+        </member>
+        <member name="P:Abp.NHibernate.Uow.NhUnitOfWork.DbConnection">
+            <summary>
+            <see cref="T:Abp.NHibernate.Uow.NhUnitOfWork"/> uses this DbConnection if it's set.
+            This is usually set in tests.
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.Uow.NhUnitOfWork.#ctor(NHibernate.ISessionFactory,Abp.Domain.Uow.IConnectionStringResolver,Abp.Domain.Uow.IUnitOfWorkDefaultOptions,Abp.Domain.Uow.IUnitOfWorkFilterExecuter)">
+            <summary>
+            Creates a new instance of <see cref="T:Abp.NHibernate.Uow.NhUnitOfWork"/>.
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.Uow.NhUnitOfWork.CompleteUow">
+            <summary>
+            Commits transaction and closes database connection.
+            </summary>
+        </member>
+        <member name="M:Abp.NHibernate.Uow.NhUnitOfWork.DisposeUow">
+            <summary>
+            Rollbacks transaction and closes database connection.
+            </summary>
+        </member>
+    </members>
+</doc>

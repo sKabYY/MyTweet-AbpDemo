@@ -91,7 +91,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyTweet.Domain\MyTweet.Domain.csproj">
+      <Project>{8a744a78-34f2-429b-a2a9-ab17c368b29c}</Project>
+      <Name>MyTweet.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyTweet.Infrastructure\MyTweet.Infrastructure.csproj">
+      <Project>{cf0dcad0-a1a4-423d-b698-1b0cabc83972}</Project>
+      <Name>MyTweet.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using MyTweet.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,30 +10,53 @@ namespace MyTweet.Application
 {
     public class CreateTweetInput
     {
-        public string S { get; set; }
-        public int I { get; set; }
+        public string Content { get; set; }
     }
 
     public interface IMyTweetAppService : IApplicationService
     {
         object GetTweets(string msg);
         object CreateTweet(CreateTweetInput input);
+        object GetTweetsFromQS(string keyword);
+        object DeleteAll();
     }
 
     public class MyTweetAppService : ApplicationService, IMyTweetAppService
     {
+        public ITweetRepository TweetRepository { get; set; }
+
         public object GetTweets(string msg)
         {
-            return new List<string> { "Hello", msg };
+            return TweetRepository.GetAll().OrderByDescending(x => x.CreateTime).ToList();
         }
 
         public object CreateTweet(CreateTweetInput input)
         {
-            return new
+            var tweet = new Tweet
             {
-                Msg = input.S,
-                Ret = input.I
+                Id = Guid.NewGuid().ToString("N"),
+                Content = input.Content,
+                CreateTime = DateTime.Now
             };
+            var o = TweetRepository.Insert(tweet);
+            return o;
+        }
+
+        public ITweetQueryService TweetQueryService { get; set; }
+
+        public object GetTweetsFromQS(string keyword)
+        {
+            return TweetQueryService.SearchTweets(keyword);
+        }
+
+        public object DeleteAll()
+        {
+            var entities = TweetRepository.GetAll().ToList();
+            foreach (var entity in entities)
+            {
+                TweetRepository.Delete(entity);
+            }
+            return entities.Count;
         }
     }
 }
