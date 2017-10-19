@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+
+<body>
+    <div class="container" style="max-width: 360px">
+        <form class="form">
+            <div class="form-group">
+                <label for="username-input">Username</label>
+                <input id="username-input" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="password-input">Password</label>
+                <input id="password-input" class="form-control" type="password" />
+            </div>
+            <div style="text-align: right">
+                <a href="/">返回</a>
+                <button id="login-btn" type="submit" class="btn btn-default">登录</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $('#login-btn').on('click', function (e) {
+            e.preventDefault();
+            var username = $('#username-input').val();
+            var password = $('#password-input').val();
+            $.post('/Account/LoginAjax', {
+                Username: username,
+                Password: password
+            }).done(function () {
+                var url = '@ViewBag.returnUrl';
+                if (!url) {
+                    url = '/';
+                }
+                location.href = url;
+            }).fail(function () {
+                alert('登录失败');
+            });
+        });
+    </script>
+</body>
+</html>

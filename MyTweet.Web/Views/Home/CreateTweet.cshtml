@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Create Tweet";
+}
+
+<style>
+    .form {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        max-width: 720px;
+    }
+</style>
+
+<form class="form">
+    <div class="form-group">
+        <label for="tweet-content">内容</label>
+        <a href="/" class="pull-right">返回</a>
+        <textarea class="form-control" id="tweet-content" name="content" rows="3"></textarea>
+    </div>
+    <div style="text-align: right">
+        <button type="submit" class="btn btn-default">发表</button>
+    </div>
+</form>
+
+<script>
+    $('.form').on('submit', function (e) {
+        e.preventDefault();
+        var content = $('#tweet-content').val();
+        if (content) {
+            $.post('/api/services/MyTweet/MyTweet/CreateTweet', { content: content }).done(function (result) {
+                if (result.success) {
+                    window.location = '/';
+                } else {
+                    alert(JSON.stringify(result));
+                }
+            });
+        } else {
+            alert('请输入内容');
+        }
+        return false;
+    });
+</script>

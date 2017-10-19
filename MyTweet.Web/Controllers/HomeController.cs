@@ -26,5 +26,11 @@ namespace MyTweet.Web.Controllers
 
             return View();
         }
+
+        [Authorize]
+        public ActionResult CreateTweet()
+        {
+            return View();
+        }
     }
 }
