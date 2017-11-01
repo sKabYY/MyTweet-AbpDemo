@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Authorization;
 using MyTweet.Domain;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace MyTweet.Application
             return TweetRepository.GetAll().OrderByDescending(x => x.CreateTime).ToList();
         }
 
+        [AbpAuthorize(MyTweetPermission.CreateTweet)]
         public object CreateTweet(CreateTweetInput input)
         {
             var tweet = new Tweet

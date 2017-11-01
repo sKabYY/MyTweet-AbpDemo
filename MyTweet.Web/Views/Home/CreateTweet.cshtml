@@ -33,6 +33,8 @@
                 } else {
                     alert(JSON.stringify(result));
                 }
+            }).fail(function () {
+                alert('发表tweet失败！');
             });
         } else {
             alert('请输入内容');

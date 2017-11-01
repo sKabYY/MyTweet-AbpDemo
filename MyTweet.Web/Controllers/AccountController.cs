@@ -10,7 +10,7 @@ namespace MyTweet.Web.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -24,6 +24,7 @@ namespace MyTweet.Web.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult LoginAjax(LoginInput input)
         {
             // 这里应该放验证用户名密码是否正确的代码。
@@ -40,6 +41,7 @@ namespace MyTweet.Web.Controllers
                 FormsAuthentication.FormsCookieName,
                 FormsAuthentication.Encrypt(ticket));
             HttpContext.Response.Cookies.Add(userCookie);
+
             return Json("OK");
         }
 
