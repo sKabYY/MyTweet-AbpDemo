@@ -1,0 +1,42 @@
+DEBUG 2017-11-02 15:22:44,785 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-02 15:22:44,816 [1    ] Abp.Modules.AbpModuleManager             - Found 8 ABP modules in total.
+DEBUG 2017-11-02 15:22:44,830 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyTweet.Web.App_Start.MyTweetWebModule, MyTweet.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,835 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,835 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,836 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,837 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,837 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,837 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyTweet.Application.MyTweetApplicationModule, MyTweet.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,837 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyTweet.Domain.MyTweetDomainModule, MyTweet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 15:22:44,840 [1    ] Abp.Modules.AbpModuleManager             - 8 modules loaded.
+DEBUG 2017-11-02 15:22:45,226 [1    ] Abp.Localization.LocalizationManager     - Initializing 2 localization sources.
+DEBUG 2017-11-02 15:22:45,247 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-02 15:22:45,252 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-02 15:22:45,546 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-02 15:22:45,597 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'MyTweet.Application.IMyTweetAppService' with service name 'MyTweet/myTweet'.
+INFO  2017-11-02 15:22:46,222 [6    ] MyTweet.Web.Controllers.HomeController   - 匿名用户访问了首页！
+INFO  2017-11-02 15:39:20,952 [26   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: MyTweet.Web.Controllers.HomeController.CreateTweet is executed by user 1988 in 1 ms from 10.211.55.3 IP address with succeed.
+INFO  2017-11-02 15:39:23,054 [29   ] MyTweet.Web.Controllers.HomeController   - 用户1988访问了首页！
+INFO  2017-11-02 15:39:23,055 [29   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: MyTweet.Web.Controllers.HomeController.Index is executed by user 1988 in 1 ms from 10.211.55.3 IP address with succeed.
+DEBUG 2017-11-02 16:30:24,422 [46   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2017-11-02 16:30:24,426 [46   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-02 16:30:24,427 [46   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-02 16:30:24,427 [46   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2017-11-02 16:45:51,986 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2017-11-02 16:45:52,016 [1    ] Abp.Modules.AbpModuleManager             - Found 8 ABP modules in total.
+DEBUG 2017-11-02 16:45:52,023 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyTweet.Web.App_Start.MyTweetWebModule, MyTweet.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,034 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,035 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,035 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,035 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,035 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=2.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,036 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyTweet.Application.MyTweetApplicationModule, MyTweet.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,036 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: MyTweet.Domain.MyTweetDomainModule, MyTweet.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2017-11-02 16:45:52,048 [1    ] Abp.Modules.AbpModuleManager             - 8 modules loaded.
+DEBUG 2017-11-02 16:45:52,496 [1    ] Abp.Localization.LocalizationManager     - Initializing 2 localization sources.
+DEBUG 2017-11-02 16:45:52,544 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2017-11-02 16:45:52,545 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2017-11-02 16:45:52,854 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2017-11-02 16:45:52,922 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'MyTweet.Application.IMyTweetAppService' with service name 'MyTweet/myTweet'.
+INFO  2017-11-02 16:45:53,341 [35   ] MyTweet.Web.Controllers.HomeController   - 用户1988访问了首页！
+INFO  2017-11-02 16:45:53,374 [35   ] et.Web.App_Start.MyTweetLogAuditingStore - 用户1988（坐标10.211.55.3）使用Chrome / 61.0 / WinNT访问了方法MyTweet.Web.Controllers.HomeController.Index，该方法在77毫秒内进行了回击，回击结果：成功！

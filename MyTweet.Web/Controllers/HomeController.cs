@@ -20,6 +20,14 @@ namespace MyTweet.Web.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            if (AbpSession.UserId.HasValue)
+            {
+                Logger.Info(string.Format("用户{0}访问了首页！", AbpSession.UserId));
+            }
+            else
+            {
+                Logger.Info("匿名用户访问了首页！");
+            }
             return View();
         }
 
