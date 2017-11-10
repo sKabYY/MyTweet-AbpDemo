@@ -26,6 +26,8 @@ namespace MyTweet.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
+
             IocManager.Instance.IocContainer.AddFacility<LoggingFacility>(
                 f => f.UseAbpLog4Net().WithConfig("log4net.config"));
 

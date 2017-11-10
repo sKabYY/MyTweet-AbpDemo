@@ -134,28 +134,4 @@ UpgradeLog*.XML
 _local_*
 
 DIST/
-
-/NHProfiler/AutoUpdate/Acknowledgments.txt
-/NHProfiler/AutoUpdate/AqiStar.TextBox.dll
-/NHProfiler/AutoUpdate/Caliburn.Micro.Platform.dll
-/NHProfiler/AutoUpdate/Caliburn.Micro.dll
-/NHProfiler/AutoUpdate/Castle.Core.dll
-/NHProfiler/AutoUpdate/Castle.Windsor.dll
-/NHProfiler/AutoUpdate/HibernatingRhinos.Profiler.Appender.NHibernateLog4Net.dll
-/NHProfiler/AutoUpdate/HibernatingRhinos.Profiler.Appender.dll
-/NHProfiler/AutoUpdate/HibernatingRhinos.Profiler.BackEnd.dll
-/NHProfiler/AutoUpdate/HibernatingRhinos.Profiler.Integration.dll
-/NHProfiler/AutoUpdate/How to use.txt
-/NHProfiler/AutoUpdate/ICSharpCode.SharpZipLib.dll
-/NHProfiler/AutoUpdate/Microsoft.Expression.Interactions.dll
-/NHProfiler/AutoUpdate/NAppUpdate.Framework.dll
-/NHProfiler/AutoUpdate/NHProf.exe
-/NHProfiler/AutoUpdate/Newtonsoft.Json.dll
-/NHProfiler/AutoUpdate/System.Reactive.Core.dll
-/NHProfiler/AutoUpdate/System.Reactive.Interfaces.dll
-/NHProfiler/AutoUpdate/System.Reactive.Linq.dll
-/NHProfiler/AutoUpdate/System.Reactive.PlatformServices.dll
-/NHProfiler/AutoUpdate/System.Windows.Interactivity.dll
-/NHProfiler/AutoUpdate/gudusoft.gsqlparser.dll
-/NHProfiler/AutoUpdate/license.txt
-/NHProfiler/AutoUpdate/log4net.dll
+logs/
