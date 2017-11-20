@@ -25,9 +25,11 @@
 <script>
     $('.form').on('submit', function (e) {
         e.preventDefault();
+        //var createPath = '/api/services/MyTweet/MyTweet/CreateTweet';
+        var createPath = '/Tweet/Create';
         var content = $('#tweet-content').val();
         if (content) {
-            $.post('/api/services/MyTweet/MyTweet/CreateTweet', { content: content }).done(function (result) {
+            $.post(createPath, { content: content }).done(function (result) {
                 if (result.success) {
                     window.location = '/';
                 } else {

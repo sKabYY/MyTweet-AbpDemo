@@ -31,7 +31,7 @@ namespace MyTweet.Application
             return TweetRepository.GetAll().OrderByDescending(x => x.CreateTime).ToList();
         }
 
-        //[AbpAuthorize(MyTweetPermission.CreateTweet)]
+        [AbpAuthorize(MyTweetPermission.CreateTweet)]
         public object CreateTweet(CreateTweetInput input)
         {
             var tweet = new Tweet
