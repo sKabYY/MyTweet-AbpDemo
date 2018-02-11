@@ -18,6 +18,7 @@ namespace MyTweet.Application
     {
         object GetTweets(string msg);
         object CreateTweet(CreateTweetInput input);
+        object GetWillFail();
         object GetTweetsFromQS(string keyword);
         object DeleteAll();
     }
@@ -42,6 +43,18 @@ namespace MyTweet.Application
             };
             var o = TweetRepository.Insert(tweet);
             return o;
+        }
+
+        public object GetWillFail()
+        {
+            var tweet = new Tweet
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Content = "Spiderman.",
+                CreateTime = DateTime.Now
+            };
+            TweetRepository.Insert(tweet);
+            throw new Exception("注定失败");
         }
 
         public ITweetQueryService TweetQueryService { get; set; }

@@ -99,10 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppAuthorizationProvider.cs" />
+    <Compile Include="LocalDbSessionConfiguration.cs" />
     <Compile Include="LocalDbSessionProvider.cs" />
     <Compile Include="MyTweetDomainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tweet.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

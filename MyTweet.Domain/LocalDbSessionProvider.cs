@@ -1,4 +1,5 @@
 ﻿using Abp.Dependency;
+using Abp.Domain.Uow;
 using Abp.NHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MyTweet.Domain
 {
-
+#if false
     public class LocalDbSessionProvider : ISessionProvider, ISingletonDependency, IDisposable
     {
         protected FluentConfiguration FluentConfiguration { get; private set; }
@@ -31,6 +32,11 @@ namespace MyTweet.Domain
                 .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()));
             // 生成session factory
             _sessionFactory = FluentConfiguration.BuildSessionFactory();
+        }
+
+        public ISession OpenSession()
+        {
+            return _sessionFactory.OpenSession();
         }
 
         private ISession _session;
@@ -54,5 +60,18 @@ namespace MyTweet.Domain
         {
             _sessionFactory.Dispose();
         }
+    }
+#endif
+
+    public class UnitOfWorkLocalDbSessionProvider : ISessionProvider, ISingletonDependency
+    {
+        private readonly ICurrentUnitOfWorkProvider _unitOfWorkProvider;
+
+        public UnitOfWorkLocalDbSessionProvider(ICurrentUnitOfWorkProvider currentUnitOfWorkProvider)
+        {
+            _unitOfWorkProvider = currentUnitOfWorkProvider;
+        }
+
+        public ISession Session => _unitOfWorkProvider.Current?.GetSession();
     }
 }

@@ -10,6 +10,7 @@ using Abp.NHibernate;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using MyTweet.Infrastructure;
+using Abp.Domain.Uow;
 
 namespace MyTweet.Domain
 {
@@ -40,7 +41,7 @@ namespace MyTweet.Domain
     public class TweetRepository : NhRepositoryBase<Tweet, string>, ITweetRepository
     {
         public TweetRepository()
-            : base(IocManager.Instance.Resolve<LocalDbSessionProvider>())
+            : base(IocManager.Instance.Resolve<UnitOfWorkLocalDbSessionProvider>())
         { }
     }
 
@@ -51,7 +52,7 @@ namespace MyTweet.Domain
 
     public class TweetQueryService : BaseQueryService, ITweetQueryService
     {
-        public TweetQueryService() : base(IocManager.Instance.Resolve<LocalDbSessionProvider>())
+        public TweetQueryService() : base(IocManager.Instance.Resolve<UnitOfWorkLocalDbSessionProvider>())
         { }
 
         public IList<Tweet> SearchTweets(string keyword)
